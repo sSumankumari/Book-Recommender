@@ -48,16 +48,21 @@ for i in range(len(popular_df)):
 
 st.header("Recommend Books")
 
-book_name = st.text_input("Enter a book name")
+# Dropdown menu for selecting a book
+book_list = pt.index.tolist()
+book_name = st.selectbox("Select a book", book_list)
+
 if st.button("Recommend"):
     try:
         recommendations = recommend(book_name)
-        for book in recommendations:
-            st.image(book['image'], width=100)
-            st.write(book['title'])
-            st.write(f"Author: {book['author']}")
-            st.write(f"Publisher: {book['publisher']}")
-            st.write(f"Publication Year: {book['publication_year']}")
+        for idx, book in enumerate(recommendations, start=1):
+            with st.container():
+                st.markdown(f"### {idx}. <u>{book['title']}</u>", unsafe_allow_html=True)
+                st.image(book['image'], width=100)
+                st.markdown(f"**Author**: {book['author']}")
+                st.markdown(f"**Publisher**: {book['publisher']}")
+                st.markdown(f"**Publication Year**: {book['publication_year']}")
+                st.markdown("---")  # Add a horizontal line between books for better separation
     except IndexError:
         st.write("Book not found in the dataset.")
 
