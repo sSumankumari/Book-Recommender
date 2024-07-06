@@ -40,11 +40,14 @@ st.title("Book Recommender System")
 
 st.sidebar.header("Popular Books")
 for i in range(len(popular_df)):
-    st.sidebar.image(popular_df.iloc[i]['Image-URL-M'], width=100)
-    st.sidebar.write(popular_df.iloc[i]['Book-Title'])
-    st.sidebar.write(f"Author: {popular_df.iloc[i]['Book-Author']}")
-    st.sidebar.write(f"Votes: {popular_df.iloc[i]['num_ratings']}")
-    st.sidebar.write(f"Rating: {popular_df.iloc[i]['avg_rating']}")
+    with st.sidebar.container():
+        st.image(popular_df.iloc[i]['Image-URL-M'], width=100)
+        st.markdown(f"<u>{popular_df.iloc[i]['Book-Title']}</u>", unsafe_allow_html=True)
+        st.markdown(f"**Author**: {popular_df.iloc[i]['Book-Author']}")
+        st.markdown(f"**Votes**: {popular_df.iloc[i]['num_ratings']}")
+        st.markdown(f"**Rating**: {popular_df.iloc[i]['avg_rating']}")
+        st.markdown("---")  # Add a horizontal line between books for better separation
+
 
 st.header("Recommend Books")
 
