@@ -38,11 +38,11 @@ def recommend(book_name):
 
 st.title("Book Recommender System")
 
-st.sidebar.header("Popular Books")
+st.sidebar.title("Popular Books")
 for i in range(len(popular_df)):
     with st.sidebar.container():
         st.image(popular_df.iloc[i]['Image-URL-M'], width=100)
-        st.markdown(f"<u>{popular_df.iloc[i]['Book-Title']}</u>", unsafe_allow_html=True)
+        st.markdown(f"### {popular_df.iloc[i]['Book-Title']}", unsafe_allow_html=True)
         st.markdown(f"**Author**: {popular_df.iloc[i]['Book-Author']}")
         st.markdown(f"**Votes**: {popular_df.iloc[i]['num_ratings']}")
         st.markdown(f"**Rating**: {popular_df.iloc[i]['avg_rating']}")
