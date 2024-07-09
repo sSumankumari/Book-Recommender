@@ -23,7 +23,7 @@ This application utilizes a popularity-based approach to recommend books similar
 
 ## Deployment
 
-The app is deployed on Render. Visit [Book Recommendation App](https://get-recommend-book.onrender.com/) to access the live application.
+The app is deployed using Streamlit Share. Visit [Book Recommendation App](https://getrecommend-book.streamlit.app/) to access the live application.
 
 ## Getting Started
 
