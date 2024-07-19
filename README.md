@@ -6,14 +6,6 @@ This Streamlit web application provides personalized book recommendations based 
 
 This application utilizes a popularity-based approach to recommend books similar to the one selected by the user. It leverages a pre-processed dataset containing book titles, authors, publication years, and ratings to provide efficient and relevant recommendations.
 
-## Skills Used
-
-- Python
-- Streamlit
-- Pandas
-- Data preprocessing
-- Basic web development (HTML/CSS for Streamlit)
-
 ## Features
 
 - **Book Selection:** Users can choose a book from a dropdown menu to receive recommendations.
